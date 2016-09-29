@@ -7,3 +7,7 @@
 就会随便怎么切换都不会滚动切换之后置顶
 
 ![CarouselView in action](Untitled.gif)
+
+页面介绍:
+
+![CarouselView in action](icon.png)
