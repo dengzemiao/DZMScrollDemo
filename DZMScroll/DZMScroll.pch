@@ -1,0 +1,33 @@
+//
+//  DZMScroll.pch
+//  DZMScroll
+//
+//  Created by 邓泽淼 on 16/9/29.
+//  Copyright © 2016年 DZM. All rights reserved.
+//
+
+#ifndef DZMScroll_h
+#define DZMScroll_h
+
+// 最顶部的滚动控件高度
+#define HeaderViewH 300.0
+
+// Sub头部滚动view
+#define SubHeaderViewH 44.0
+
+// 导航栏高
+#define NavH 64.0
+
+// tabbar高
+#define TabH 44.0
+
+// 父进入置顶命令
+#define kSupGOTopNotificationName @"SupGoTop"
+
+// 子进入置顶命令
+#define kSubGOTopNotificationName @"SubGOTop"
+
+// 能滚动命令
+#define kCanScroll @"CanScroll"
+
+#endif /* DZMScroll_h */
