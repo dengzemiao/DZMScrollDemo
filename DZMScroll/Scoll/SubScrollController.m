@@ -21,6 +21,11 @@
  */
 @property (nonatomic, assign) BOOL canScroll;
 
+/**
+ *  零时颜色  可以直接删掉 用于区分的
+ */
+@property (nonatomic,strong) UIColor *tempColor;
+
 @end
 
 @implementation SubScrollController
@@ -29,9 +34,11 @@
     
     [super viewDidLoad];
     
+    // 零时颜色  可以直接删掉 用于区分的
+    self.tempColor = [UIColor colorWithRed:((arc4random() % 255) / 255.0) green:(arc4random() % 255) / 255.0 blue:(arc4random() % 255) / 255.0 alpha:1.0];
+    
     // 创建TableView
     UITableView *tableView = [[UITableView alloc] init];
-    tableView.backgroundColor = [UIColor redColor];
     tableView.translatesAutoresizingMaskIntoConstraints = NO;
     tableView.delegate = self;
     tableView.dataSource = self;
@@ -79,7 +86,7 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     
-    cell.backgroundColor = [UIColor yellowColor];
+    cell.backgroundColor = self.tempColor;
     
     cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
     
