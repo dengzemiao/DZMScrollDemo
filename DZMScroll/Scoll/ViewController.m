@@ -103,7 +103,7 @@
    
     if (offsetY >= barOffsetY) { // 父滚动到顶部
         
-//        scrollView.contentOffset = CGPointMake(0, barOffsetY);
+        scrollView.contentOffset = CGPointMake(0, barOffsetY);
         
         _isTopIsCanNotMoveTabView = YES;
         

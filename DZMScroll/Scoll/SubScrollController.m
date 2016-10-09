@@ -98,17 +98,19 @@
  */
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    if (!self.canScroll) { // 能滚动
+    if (!self.canScroll) { // 子滚动 不能滚动
         
         [scrollView setContentOffset:CGPointZero];
-    }
-    
-    CGFloat offsetY = scrollView.contentOffset.y;
-    
-    if (offsetY <= 0) {
         
-        // 子滚动到达顶部通知
-        [[NSNotificationCenter defaultCenter] postNotificationName:kSubGOTopNotificationName object:nil userInfo:@{kCanScroll:@(1)}];
+    }else{
+        
+        CGFloat offsetY = scrollView.contentOffset.y;
+        
+        if (offsetY <= 0) {
+            
+            // 子滚动到达顶部通知
+            [[NSNotificationCenter defaultCenter] postNotificationName:kSubGOTopNotificationName object:nil userInfo:@{kCanScroll:@(1)}];
+        }
     }
 }
 
@@ -133,6 +135,7 @@
         }
     }else if([notificationName isEqualToString:kSubGOTopNotificationName]){
         
+        // 当离开父滚动离开顶部 当前滚动回到顶部
         self.tableView.contentOffset = CGPointZero;
         
         self.canScroll = NO;
